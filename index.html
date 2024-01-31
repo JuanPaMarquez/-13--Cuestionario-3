@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Position CSS</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>Position CSS</header>
+        <ul>
+            <li><a href="#introduccion" class="nav-link">Introduccion</a></li>
+            <li><a href="#tipos_de_posicionamiento" class="nav-link">Tipos de posicionamiento</a></li>
+            <li><a href="#sintaxis" class="nav-link">Sintaxis</a></li>
+            <li><a href="#posicionamiento_relativo" class="nav-link">Posicionamiento relativo</a></li>
+            <li><a href="#accesibilidad" class="nav-link">Accesibilidad</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section id="introduccion" class="main-section">
+            <header>Introduccion</header>
+            <p>La propiedad position de CSS especifica cómo un elemento es posicionado en el documento. Las propiedades top, right, bottom, y left determinan la ubicación final de los elementos posicionados.</p>
+        </section>
+        <section id="tipos_de_posicionamiento" class="main-section">
+            <header>Tipos de posicionamiento</header>
+            <ul>
+                <li>Un elemento posicionado es un elemento cuyo valor computado de position es relative, absolute, fixed, o sticky. (En otras palabras, cualquiera excepto static).</li>
+                <li>Un elemento posicionado relativamente es un elemento cuyo valor computado de position es relative. Las propiedades top y bottom especifican el desplazamiento vertical desde su posición original; las propiedades left y right especifican su desplazamiento horizontal.</li>
+                <li>Un elemento posicionado absolutamente es un elemento cuyo valor computado de position es absolute o fixed. Las propiedades top, right, bottom, y left especifican el desplazamiento desde los bordes del bloque contenedor (en-US) del elemento. (El bloque contenedor es el ancestro relativo al cual el elemento está posicionado). Si el elemento tiene márgenes, se agregarán al desplazamiento. el elemento establece un nuevo contexto de formato de bloque para su contenido</li>
+                <li>Un elemento posicionado fijamente es un elemento cuyo valor de position computado es sticky. Es tratado como un elemento posicionado relativamente hasta que su bloque contenedor (en-US) cruza un límite establecido (como por ejemplo dando a top cualquier valor distinto de auto), dentro de su flujo principal (o el contenedor dentro del cual se mueve), desde el cual es tratado como "fijo" hasta que alcance el borde opuesto de su bloque contenedor (en-US).</li>
+            </ul>
+            <p>La mayoría de las veces, los elementos absolutamente posicionados que tienen su height y width establecidos en auto son ajustados hasta acomodarse a su contenido. Sin embargo, elementos non-replaced y absolutamente posicionados se pueden crear para llenar el espacio vertical disponible, especificando tanto top como bottom, y dejando height sin especificar (es decir, auto). De igual manera se pueden utilizar para llenar el espacio horizontal disponible especificando tanto left como right, y dando a width el valor de auto.</p>
+            <p>A excepción del caso anteriormente descrito (de elementos posicionados absolutamente rellenando el espacio disponible):</p>
+            <ul>
+                <li>Si ambos, top y bottom están especificados (técnicamente, no auto), top gana.</li>
+                <li>Si ambos, left y right, están especificados, left gana cuando direction es ltr (Inglés, japonés horizontal, etc.) y right gana cuando direction es rtl (Persa, árabe, hebreo, etc.).</li>
+            </ul>
+        </section>
+        <section id="sintaxis" class="main-section">
+            <header>Sintaxis</header>
+            <p>La propiedad position es especificada como una palabra única elegida de la siguiente lista de valores.</p>
+            <p>Sintaxis formal:</p>
+            <code>position = static|relative|absolute|sticky|fixed</code>
+        </section>
+        <section id="posicionamiento_relativo" class="main-section">
+            <header>Posicionamiento relativo</header>
+            <p>Elementos posicionados relativamente son desplazados una cantidad dada de su posición normal en el documento, pero sin que su desplazamiento afecte a otros elementos. En el ejemplo siguiente, nótese cómo los demás elementos se ubican como si "Two" estuviera ocupando el lugar de su ubicación normal.</p>
+            <p>Html</p>
+            <code>&lt;div class="box" id="one"&gt;One&lt;/div&gt; </code> <br>
+            <code>&lt;div class="box" id="two"&gt;Two&lt;/div&gt; </code>
+            <p>Css</p>
+            <code>
+                .box { <br>
+                display: inline-block; <br>
+                width: 100px; <br>
+                height: 100px; <br>
+                background: red; <br>
+                color: white; <br>
+                }<br>
+            </code>
+            <code><br>
+                #two { <br>
+                position: absolute;<br>
+                top: 20px;<br>
+                left: 20px;<br>
+                background: blue;<br>
+                }
+            </code>
+        </section>
+        <section id="accesibilidad" class="main-section">
+            <header>Accesibilidad</header>
+            <p>Asegurarse de que los elementos posicionados con valor absolute o fixed no oscurezcan el resto del contenido cuando la página sea ampliada para aumentar el tamaño del texto.</p>
+            <p>Los elementos que se desplazan que contienen contenido fixed o sticky content pueden ocasionar problemas de performance y accesibilidad. Mientras un usuario desplaza la página, el navegador debe realizar repaint del contenido sticky o fijo en una nueva locación. Dependiendo del contenido que precisa ser repainted, la performance del navegador y la velocidad de procesamiento del dispositivo, el navegador podría no ser capaz de realizar el repaint a 60 fps, ocasionando problemas de accesibilidad para personas con sensibilidades y desprolijidad para todos. Una solución es agregar will-change: transform (en-US) a los elementos posicionados para renderizar el elemento en su propia capa, mejorando la velocidad del repaint y por lo tanto mejorando performance y accesibilidad.</p>
+        </section>
+    </main>
+</body>
+</html>
