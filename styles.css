@@ -73,7 +73,15 @@ section {
     }
     nav {
         width: 300px;
+        height: 300px;
+        position: sticky;
+        top: 0;
+    }
+}
 
+@media (min-width: 1000px) {
+    nav {
+        height: 250px;
     }
 }
 
