@@ -8,8 +8,9 @@
 </head>
 <body>
     <nav id="navbar">
-        <header>Position CSS</header>
-        <ul>
+        <button id="menu" type="button">MENU</button>
+        <header id="titulo">Position CSS</header>
+        <ul id="lista">
             <li><a href="#introduccion" class="nav-link">Introduccion</a></li>
             <li><a href="#tipos_de_posicionamiento" class="nav-link">Tipos de posicionamiento</a></li>
             <li><a href="#sintaxis" class="nav-link">Sintaxis</a></li>
@@ -41,7 +42,7 @@
             <header>Sintaxis</header>
             <p>La propiedad position es especificada como una palabra única elegida de la siguiente lista de valores.</p>
             <p>Sintaxis formal:</p>
-            <code>position = static|relative|absolute|sticky|fixed</code>
+            <code>position = static | relative | absolute | sticky | fixed </code>
         </section>
         <section id="posicionamiento_relativo" class="main-section">
             <header>Posicionamiento relativo</header>
@@ -52,19 +53,23 @@
             <p>Css</p>
             <code>
                 .box { <br>
-                display: inline-block; <br>
-                width: 100px; <br>
-                height: 100px; <br>
-                background: red; <br>
-                color: white; <br>
+                <dd>
+                    display: inline-block; <br>
+                    width: 100px; <br>
+                    height: 100px; <br>
+                    background: red; <br>
+                    color: white; <br>
+                </dd>
                 }<br>
             </code>
             <code><br>
                 #two { <br>
-                position: absolute;<br>
-                top: 20px;<br>
-                left: 20px;<br>
-                background: blue;<br>
+                <dd>
+                    position: absolute;<br>
+                    top: 20px;<br>
+                    left: 20px;<br>
+                    background: blue;<br>
+                </dd>
                 }
             </code>
         </section>
@@ -74,5 +79,17 @@
             <p>Los elementos que se desplazan que contienen contenido fixed o sticky content pueden ocasionar problemas de performance y accesibilidad. Mientras un usuario desplaza la página, el navegador debe realizar repaint del contenido sticky o fijo en una nueva locación. Dependiendo del contenido que precisa ser repainted, la performance del navegador y la velocidad de procesamiento del dispositivo, el navegador podría no ser capaz de realizar el repaint a 60 fps, ocasionando problemas de accesibilidad para personas con sensibilidades y desprolijidad para todos. Una solución es agregar will-change: transform (en-US) a los elementos posicionados para renderizar el elemento en su propia capa, mejorando la velocidad del repaint y por lo tanto mejorando performance y accesibilidad.</p>
         </section>
     </main>
+    <div id="barraMenu">
+        <button id="salir">X</button>
+        <h2>Tabla de contenido</h2>
+        <ul id="lista">
+            <li><a href="#introduccion" class="nav-menu">Introduccion</a></li>
+            <li><a href="#tipos_de_posicionamiento" class="nav-menu">Tipos de posicionamiento</a></li>
+            <li><a href="#sintaxis" class="nav-menu">Sintaxis</a></li>
+            <li><a href="#posicionamiento_relativo" class="nav-menu">Posicionamiento relativo</a></li>
+            <li><a href="#accesibilidad" class="nav-menu">Accesibilidad</a></li>
+        </ul>
+    </d>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
